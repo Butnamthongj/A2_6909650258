@@ -1,59 +1,162 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
-    <title>Learning Portfolio - CS100</title>
-    <!-- เชื่อมไปยังไฟล์ CSS ที่แยกไว้นอกไฟล์ -->
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Portfolio A2 - บุษย์น้ำทอง ใจบุญ (6909650258)</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
 
-    <header>
-        <h1>Learning Portfolio</h1>
-        <p>รายวิชา CS100 ภาคเรียน 1/2569</p>
-    </header>
+    <!-- Navigation Bar & Search Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                </ul>
+                <form class="d-flex" role="search" onsubmit="searchContent(event)">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="ค้นหาในเว็บ..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>สวัสดีค่ะ หนูชื่อ นางสาวบุษย์น้ำทอง ใจบุญ รหัสนักศึกษา 6909650258</p>
-            <p>หนูชื่นชอบ จุ๋มเหม่ง ซึ่งเป็นสุนัขพันธุ์โกลเด้นรีทรีฟเวอร์ที่แมสในTiktok</p>
-            <img src="media/dog.png" alt="รูปน้องหมา" width="180">
+    <!-- Main Container -->
+    <div class="container my-5">
+        
+        <!-- Header Title -->
+        <div class="text-center mb-5">
+            <h1 class="fw-bold text-primary display-5">Learning Portfolio</h1>
+            <p class="text-muted fs-5">สรุปผลงานและการเรียนรู้เว็บไซต์ (A2)</p>
+        </div>
+
+        <!-- About Me Section -->
+        <section id="about" class="card shadow-sm p-4 mb-5 border-0">
+            <h2 class="text-primary border-bottom pb-2 fw-bold">About Me</h2>
+            <div class="row align-items-center mt-3 g-4">
+                <div class="col-md-4 text-center">
+                    <img src="media/profile.jpg" alt="รูปโปรไฟล์ บุษย์น้ำทอง ใจบุญ" class="img-fluid rounded-circle shadow mb-3" style="max-width: 180px; height: 180px; object-fit: cover;">
+                </div>
+                <div class="col-md-8">
+                    <h3 class="fw-bold h4">นางสาวบุษย์น้ำทอง ใจบุญ</h3>
+                    <p class="text-muted mb-1"><strong>รหัสนักศึกษา:</strong> 6909650258</p>
+                    <p class="text-muted mb-3"><strong>หลักสูตร:</strong> คณะวิทยาศาสตร์และเทคโนโลยี สาขาวิทยาการคอมพิวเตอร์ (ภาคพิเศษ)</p>
+                    <p>สวัสดีค่ะ กำลังศึกษาระดับปริญญาตรี มีความสนใจในการพัฒนาเว็บไซต์และทักษะเทคโนโลยีใหม่ๆ ชอบเรียนรู้และพัฒนาตนเองอยู่เสมอค่ะ</p>
+                    <div class="d-flex align-items-center bg-light p-3 rounded border mt-3">
+                        <img src="media/dog.png" alt="รูปน้องหมาจุ๋มเหม่ง" class="rounded me-3" style="max-width: 70px; height: auto;">
+                        <div>
+                            <strong class="d-block text-dark">ความชอบส่วนตัว:</strong>
+                            <span class="text-secondary small">ชอบสุนัขพันธุ์โกลเด้นรีทรีฟเวอร์ โดยเฉพาะน้องหมาชื่อ "จุ๋มเหม่ง" ค่ะ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>What I Built</h2>
-            <p>งาน A1 นี้ หนูได้ทดลองสร้างเว็บไซต์ Learning Portfolio หน้าเดียวค่ะ เพื่อแนะนำตัวเองและบันทึกการเรียนรู้</p>
-            <p><b>องค์ประกอบหลัก:</b> มีส่วนแนะนำตัว รายละเอียดโปรเจกต์ ขั้นตอนการพัฒนา และการสะท้อนความคิดค่ะ</p>
-            <p><b>การทำงานของ Client / Server:</b> ตอนเปิดไฟล์นี้ผ่านเว็บเบราว์เซอร์ ทำงานแค่ฝั่ง Client (Browser) เท่านั้นค่ะ เพราะอ่านไฟล์ HTML จากในเครื่องคอมพิวเตอร์ตรงๆ ยังไม่ได้ผ่าน Server (ขึ้นต้นด้วย file://)</p>
+        <!-- My Portfolio Section (2 Items) -->
+        <section id="portfolio" class="mb-5">
+            <h2 class="text-primary border-bottom pb-2 mb-4 fw-bold">My Portfolio</h2>
+            
+            <div class="row g-4">
+                <!-- Portfolio Item 1: CS100 A1 -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h3 class="card-title h5 fw-bold text-primary">CS100 A1: My First Learning Portfolio</h3>
+                            
+                            <p class="mb-1"><strong>Type:</strong> <span class="badge bg-secondary">Course Assignment</span></p>
+                            <p class="mb-1"><strong>Date:</strong> 30 Aug 2026</p>
+                            <p class="mb-1"><strong>Role:</strong> Individual Developer</p>
+                            <p class="mb-2"><strong>Description:</strong> พัฒนาเว็บไซต์ Learning Portfolio หน้าเดียวด้วย HTML และ CSS เพื่อแนะนำตัวเองและสะท้อนการเรียนรู้เบื้องต้น</p>
+                            <p class="mb-3"><strong>Skills:</strong> <span class="badge bg-light text-dark border">HTML</span> <span class="badge bg-light text-dark border">CSS</span></p>
+
+                            <!-- Reflection -->
+                            <div class="bg-light p-3 rounded border mb-3">
+                                <h6 class="fw-bold text-dark mb-2">Reflection:</h6>
+                                <ul class="small text-secondary ps-3 mb-0">
+                                    <li class="mb-1"><strong>What I did:</strong> เขียนโครงสร้าง HTML และตกแต่งด้วย CSS จัดวาง Layout เป็นหน้าเว็บพอร์ตโฟลิโอ</li>
+                                    <li class="mb-1"><strong>What I learned:</strong> เข้าใจโครงสร้าง Tag พื้นฐาน Semantic HTML และการเรียกใช้ Relative Path ของรูปภาพ</li>
+                                    <li class="mb-1"><strong>Challenge:</strong> เจอปัญหาเรื่อง Path รูปภาพไม่แสดงผลเนื่องจากชื่อไฟล์และโฟลเดอร์ ตรวจสอบและแก้ไขจนสำเร็จ</li>
+                                    <li><strong>Next step:</strong> ต้องการพัฒนาหน้าเว็บให้สวยงามยิ่งขึ้น และรองรับการแสดงผลบนอุปกรณ์มือถือด้วย Bootstrap</li>
+                                </ul>
+                            </div>
+
+                            <!-- Evidence -->
+                            <div class="mt-auto">
+                                <p class="mb-2"><strong>Evidence:</strong></p>
+                                <div class="text-center">
+                                    <img src="media/a1.jpg" alt="ภาพตัวอย่างงาน A1" class="img-fluid rounded border shadow-sm" style="max-height: 200px; width: auto;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2: AORUS AI Event -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h3 class="card-title h5 fw-bold text-primary">AORUS AI EXPERIENCE CAMPUS ROADSHOW 2026</h3>
+                            
+                            <p class="mb-1"><strong>Type:</strong> <span class="badge bg-primary">Activity</span></p>
+                            <p class="mb-1"><strong>Date:</strong> 4 Sep 2026</p>
+                            <p class="mb-1"><strong>Role:</strong> Participant</p>
+                            <p class="mb-2"><strong>Description:</strong> เข้าร่วมรับฟังการบรรยายเกี่ยวกับเทคโนโลยีปัญญาประดิษฐ์ (AI) เทรนด์ฮาร์ดแวร์ยุคใหม่ และข้อกฎหมาย พ.ร.บ. ดิจิทัลที่เกี่ยวข้อง</p>
+                            <p class="mb-3"><strong>Skills:</strong> <span class="badge bg-light text-dark border">AI Technology</span> <span class="badge bg-light text-dark border">Digital Ethics & Law</span></p>
+
+                            <!-- Reflection -->
+                            <div class="bg-light p-3 rounded border mb-3">
+                                <h6 class="fw-bold text-dark mb-2">Reflection:</h6>
+                                <ul class="small text-secondary ps-3 mb-0">
+                                    <li class="mb-1"><strong>What I did:</strong> เข้าร่วมฟังบรรยายและร่วมกิจกรรมในงาน AORUS AI Experience Campus Roadshow</li>
+                                    <li class="mb-1"><strong>What I learned:</strong> ได้เข้าใจแนวทางการประยุกต์ใช้ AI รวมถึงข้อควรระวังทางกฎหมายและ พ.ร.บ. คอมพิวเตอร์</li>
+                                    <li class="mb-1"><strong>Challenge:</strong> การทำความเข้าใจข้อกฎหมายเทคโนโลยีและคำศัพท์เทคนิคใหม่ๆ ต้องตั้งใจฟังและจับประเด็น</li>
+                                    <li><strong>Next step:</strong> นำความรู้เรื่อง AI และข้อกำหนดทางกฎหมายมาปรับใช้ในการพัฒนาโปรแกรมอย่างถูกต้อง</li>
+                                </ul>
+                            </div>
+
+                            <!-- Evidence -->
+                            <div class="mt-auto">
+                                <p class="mb-2"><strong>Evidence:</strong></p>
+                                <div class="text-center">
+                                    <img src="media/aorus.jpg" alt="บรรยากาศงาน AORUS AI Experience" class="img-fluid rounded border shadow-sm" style="max-height: 200px; width: auto;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>How I Built It</h2>
-            <p>ขั้นตอนการทำ เริ่มจากวางโครงสร้างหน้าเว็บด้วย HTML แล้วแยกไปเขียนไฟล์ CSS สำหรับจัดระยะห่างและสีสันค่ะ</p>
-            <p><b>เครื่องมือที่ใช้:</b></p>
-            <ul>
-                <li>Visual Studio Code สำหรับพิมพ์โค้ด</li>
-                <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a> เอาไว้เปิดหาคำสั่ง HTML และ CSS </li>
-            </ul>
-        </section>
+        <!-- Footer -->
+        <footer class="text-center py-4 text-muted border-top mt-5">
+            <p class="mb-0">&copy; 2026 บุษย์น้ำทอง ใจบุญ (6909650258)</p>
+        </footer>
+    </div>
 
-        <section>
-            <h2>Reflection</h2>
-            <p><b>ปัญหาที่เจอและการแก้ไข:</b><br>
-            ตอนแรกใส่รูปแล้วรูปไม่ยอมขึ้นหน้าเว็บค่ะ งงอยู่นานมาก พอลองเช็กดูถึงรู้ว่าใส่ชื่อไฟล์ผิด และวางรูปไว้นอกโฟลเดอร์ media พอเปลี่ยนชื่อไฟล์รูปให้ตรงกับในแท็ก &lt;img&gt; แล้วย้ายรูปไปไว้ในโฟลเดอร์ media รูปก็ขึ้นแล้วค่ะ</p>
+    <!-- JavaScript สำหรับ Search Bar -->
+    <script>
+        function searchContent(event) {
+            event.preventDefault();
+            let query = document.getElementById('searchInput').value.trim();
+            if (query !== "") {
+                alert("กำลังค้นหาคำว่า: \"" + query + "\" ในหน้าเว็บไซต์");
+            } else {
+                alert("กรุณากรอกคำที่ต้องการค้นหา");
+            }
+        }
+    </script>
 
-            <p><b>สิ่งที่เข้าใจมากขึ้น:</b><br>
-            เข้าใจวิธีใส่รูปภาพด้วย Relative Path มากขึ้น และรู้ว่าชื่อไฟล์กับนามสกุลไฟล์รูป (.png / .jpg) สำคัญมาก ถ้าพิมพ์ผิดแค่นิดเดียวรูปก็จะไม่ขึ้นเลย</p>
-
-            <p><b>สิ่งที่อยากพัฒนาต่อ:</b><br>
-            อยากลองแต่งสีหน้าเว็บให้สวยกว่านี้ และเรียนรู้คำสั่ง CSS ใหม่ๆ เพิ่มเติมค่ะ</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 บุษย์น้ำทอง ใจบุญ. All rights reserved.</p>
-    </footer>
-
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
